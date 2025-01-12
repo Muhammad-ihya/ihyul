@@ -20,7 +20,7 @@ def add_horizontal_gradient_background(image_url):
                 to right, 
                 rgba(0, 0, 0, 1) 100%, /* Setengah bagian biru langit solid */
                 rgba(0, 0, 0, 0.5) 10%, /* Gradasi menuju transparansi */
-                rgba(0, 0, 0, 0) 100%  /* Transparan penuh */
+                rgba(0, 0, 0, 0) 20%  /* Transparan penuh */
             ), 
             url("{image_url}");
             background-size: cover;
