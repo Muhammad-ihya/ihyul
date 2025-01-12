@@ -11,7 +11,7 @@ buah_data = {
 }
 
 #untuk input gambar background
-def add_gradient_overlay_background(image_url, overlay_opacity=0.5):
+def add_gradient_overlay_background(image_url, overlay_opacity=1):
     """
     Menambahkan background gambar dengan overlay warna hitam dan opacity yang dapat diatur.
     
