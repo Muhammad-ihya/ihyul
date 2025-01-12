@@ -18,8 +18,8 @@ def add_horizontal_gradient_background(image_url):
         .stApp {{
             background: linear-gradient(
                 to right, 
-                rgba(0, 0, 0, 1) 0%, /* Setengah bagian biru langit solid */
-                rgba(0, 0, 0, 0.5) 0%, /* Gradasi menuju transparansi */
+                rgba(0, 0, 0, 1) 50%, /* Setengah bagian biru langit solid */
+                rgba(0, 0, 0, 0.5) 50%, /* Gradasi menuju transparansi */
                 rgba(0, 0, 0, 0) 100%  /* Transparan penuh */
             ), 
             url("{image_url}");
