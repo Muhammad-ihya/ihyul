@@ -11,18 +11,24 @@ buah_data = {
 }
 
 #untuk input gambar background
-def add_horizontal_gradient_background(image_url):
+def add_gradient_overlay_background(image_url, overlay_opacity=0.5):
+    """
+    Menambahkan background gambar dengan overlay warna hitam dan opacity yang dapat diatur.
+    
+    Parameters:
+    - image_url: URL gambar untuk background.
+    - overlay_opacity: Opacity overlay hitam (0.0 - 1.0).
+    """
     st.markdown(
         f"""
         <style>
         .stApp {{
-            background: linear-gradient(
-                to right, 
-                rgba(0, 0, 0, 1) 10%, /* Setengah bagian biru langit solid */
-                rgba(0, 0, 0, 0.5) 50%, /* Gradasi menuju transparansi */
-                rgba(0, 0, 0, 0) 20%  /* Transparan penuh */
-            ), 
-            url("{image_url}");
+            background: 
+                linear-gradient(
+                    rgba(0, 0, 0, {overlay_opacity}), /* Overlay warna hitam dengan opacity */
+                    rgba(0, 0, 0, {overlay_opacity})
+                ),
+                url("{image_url}");
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -36,8 +42,9 @@ def add_horizontal_gradient_background(image_url):
 # URL gambar Anda (ganti dengan URL gambar yang Anda gunakan)
 image_url = "https://akcdn.detik.net.id/community/media/visual/2022/05/16/buah-buahan-1_169.jpeg?w=700&q=90"
 
-# Tambahkan background dengan gradien horizontal
-add_horizontal_gradient_background(image_url)
+# Tambahkan background dengan overlay hitam (opacity 0.5)
+add_gradient_overlay_background(image_url, overlay_opacity=0.7)
+
 
 
 # Membuat DataFrame untuk buah
