@@ -2,7 +2,17 @@
 import streamlit as st
 import pandas as pd
 
-
+# Tampilan menu awal
+def menu_awal():
+    st.title("Politeknik AKA Bogor")
+    st.image("background.jpg", use_column_width=True)  
+    st.write("""
+        Kalkulator ini membantu Anda menghitung kebutuhan gula manusia berdasarkan buah yang Anda konsumsi. 
+        Klik tombol di bawah ini untuk memulai.
+    """)
+    if st.button("Mulai Kalkulator"):
+        return True
+    return False
 
 # Data gula per 100 gram buah (untuk contoh, Anda bisa menambahkan lebih banyak buah)
 buah_data = {
