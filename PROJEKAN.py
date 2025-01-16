@@ -3,21 +3,6 @@ import streamlit as st
 import pandas as pd
 
 
-from flask import Flask, render_template, request
-
-app = Flask(__name__)
-
-@app.route('/', methods=['GET', 'POST'])
-def index():
-    if request.method == 'POST':
-        nama = request.form['nama']
-        return f"Halo, {nama}! Selamat datang."
-    else:
-        return render_template('index.html')
-
-if __name__ == '__main__':
-    app.run(debug=True)
-
 # Data gula per 100 gram buah (untuk contoh, Anda bisa menambahkan lebih banyak buah)
 buah_data = {
     'Nama Buah': ['Apel', 'Arbei', 'Apricot', 'Anggur', 'Alpukat', 'Bit' , 'Belimbing','Bengkuang','Blueberi','Blewah','Ceri','Ciplukan','Carica','Cermai','Cranberry','Cempedak','Delima','Durian','Duku','Jeruk','Jambu Biji','Jambu Air','Kurma', 'Kedondong','Kelapa','Kecapi','Kelengkeng','Kiwi','Kesemek','Leci','Labu','Lemon','Mangga','Murbei','Matoa','Mengkudu', 'Manggis','Melon','Markisa','Naga','Nangka','Nanas','Pepaya','Pir','Persik','Plum','Pisang','Rambutan','Sirsak','Sukun','Salak','Stroberi','Semangka','Sawo','Tin','Tomat','Tebu','Timun','Zaitun'],
