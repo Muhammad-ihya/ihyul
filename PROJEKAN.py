@@ -3,6 +3,34 @@ import streamlit as st
 import pandas as pd
 
 
+def tampilkan_menu():
+    print("===================================")
+    print("       Selamat Datang di Program  ")
+    print("===================================")
+    print("1. Pilihan 1")
+    print("2. Pilihan 2")
+    print("3. Keluar")
+    print("===================================")
+
+def main():
+    while True:
+        tampilkan_menu()
+        pilihan = input("Silakan pilih menu (1/2/3): ")
+
+        if pilihan == '1':
+            print("Anda memilih Pilihan 1")
+            # Tambahkan logika untuk pilihan 1 di sini
+        elif pilihan == '2':
+            print("Anda memilih Pilihan 2")
+            # Tambahkan logika untuk pilihan 2 di sini
+        elif pilihan == '3':
+            print("Terima kasih! Program selesai.")
+            break
+        else:
+            print("Pilihan tidak valid. Silakan coba lagi.")
+
+if __name__ == "__main__":
+    main()
 
 # Data gula per 100 gram buah (untuk contoh, Anda bisa menambahkan lebih banyak buah)
 buah_data = {
