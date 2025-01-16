@@ -3,29 +3,33 @@ import streamlit as st
 import pandas as pd
 
 
-def tampilkan_menu():
+def tampilkan_tampilan_awal():
     print("===================================")
     print("       Selamat Datang di Program  ")
     print("===================================")
-    print("1. Pilihan 1")
-    print("2. Pilihan 2")
+    print("Silakan pilih opsi berikut:")
+    print("1. Mulai Program")
+    print("2. Bantuan")
     print("3. Keluar")
     print("===================================")
 
 def main():
     while True:
-        tampilkan_menu()
-        pilihan = input("Silakan pilih menu (1/2/3): ")
+        tampilkan_tampilan_awal()
+        pilihan = input("Masukkan pilihan Anda (1/2/3): ")
 
         if pilihan == '1':
-            print("Anda memilih Pilihan 1")
-            # Tambahkan logika untuk pilihan 1 di sini
+            print("Anda memilih untuk memulai program.")
+            # Tambahkan logika untuk memulai program di sini
+            break  # Hentikan loop jika ingin melanjutkan ke bagian lain
         elif pilihan == '2':
-            print("Anda memilih Pilihan 2")
-            # Tambahkan logika untuk pilihan 2 di sini
+            print("Ini adalah bagian bantuan.")
+            # Tambahkan logika untuk bantuan di sini
         elif pilihan == '3':
             print("Terima kasih! Program selesai.")
             break
+        else:
+            print("Pilihan tidak valid. Silakan coba lagi.")
 
 if __name__ == "__main__":
     main()
