@@ -3,27 +3,6 @@ import streamlit as st
 import pandas as pd
 
 
-# Halaman awal
-def halaman_awal():
-    st.title("Selamat Datang di Kalkulator Kebutuhan Gula")
-    st.image("https://akcdn.detik.net.id/community/media/visual/2022/05/16/buah-buahan-1_169.jpeg?w=700&q=90", use_column_width=True)
-    st.write("""
-        Kalkulator ini membantu Anda menghitung kebutuhan gula harian dari buah yang Anda konsumsi. 
-        Klik tombol di bawah untuk memulai.
-    """)
-    if st.button("Mulai"):
-        st.session_state.halaman = "kalkulator"
-
-# Logika untuk navigasi halaman
-if "halaman" not in st.session_state:
-    st.session_state.halaman = "awal"
-
-if st.session_state.halaman == "awal":
-    halaman_awal()
-elif st.session_state.halaman == "kalkulator":
-    halaman_kalkulator()
-
-
 
 # Data gula per 100 gram buah (untuk contoh, Anda bisa menambahkan lebih banyak buah)
 buah_data = {
