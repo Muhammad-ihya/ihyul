@@ -3,16 +3,20 @@ import streamlit as st
 import pandas as pd
 
 
-from flask import Flask, render_template
-
-app = Flask(__name__)
-
-@app.route('/')
-def index():
-    return render_template('index.html')
-
-if __name__ == '__main__':
-    app.run(debug=True)
+!DOCTYPE.html
+html
+<head>
+    <title>Halaman Awal</title>
+</head>
+<body>
+    <h1>Selamat datang di situs saya!</h1>
+    <form method="POST">
+        <label for="nama">Masukkan nama Anda:</label>
+        <input type="text" id="nama" name="nama">
+        <input type="submit" value="Kirim">
+    </form>
+</body>
+</html>
 
 # Data gula per 100 gram buah (untuk contoh, Anda bisa menambahkan lebih banyak buah)
 buah_data = {
