@@ -2,8 +2,6 @@
 import streamlit as st
 import pandas as pd
 
-import streamlit as st
-import pandas as pd
 
 # Data gula per 100 gram buah
 buah_data = {
