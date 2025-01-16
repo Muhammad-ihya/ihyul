@@ -26,8 +26,6 @@ def main():
         elif pilihan == '3':
             print("Terima kasih! Program selesai.")
             break
-        else:
-            print("Pilihan tidak valid. Silakan coba lagi.")
 
 if __name__ == "__main__":
     main()
