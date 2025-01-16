@@ -3,36 +3,16 @@ import streamlit as st
 import pandas as pd
 
 
-def tampilkan_tampilan_awal():
-    print("===================================")
-    print("       Selamat Datang di Program  ")
-    print("===================================")
-    print("Silakan pilih opsi berikut:")
-    print("1. Mulai Program")
-    print("2. Bantuan")
-    print("3. Keluar")
-    print("===================================")
+from flask import Flask, render_template
 
-def main():
-    while True:
-        tampilkan_tampilan_awal()
-        pilihan = input("Masukkan pilihan Anda (1/2/3): ")
+app = Flask(__name__)
 
-        if pilihan == '1':
-            print("Anda memilih untuk memulai program.")
-            # Tambahkan logika untuk memulai program di sini
-            break  # Hentikan loop jika ingin melanjutkan ke bagian lain
-        elif pilihan == '2':
-            print("Ini adalah bagian bantuan.")
-            # Tambahkan logika untuk bantuan di sini
-        elif pilihan == '3':
-            print("Terima kasih! Program selesai.")
-            break
-        else:
-            print("Pilihan tidak valid. Silakan coba lagi.")
+@app.route('/')
+def index():
+    return render_template('index.html')
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    app.run(debug=True)
 
 # Data gula per 100 gram buah (untuk contoh, Anda bisa menambahkan lebih banyak buah)
 buah_data = {
