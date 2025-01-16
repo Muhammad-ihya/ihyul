@@ -4,6 +4,7 @@ import pandas as pd
 
 import streamlit as st
 import pandas as pd
+
 # Data gula per 100 gram buah
 buah_data = {
     'Nama Buah': ['Apel', 'Arbei', 'Apricot', 'Anggur', 'Alpukat', 'Bit', 'Belimbing', 'Bengkuang', 'Blueberi', 'Blewah'],
