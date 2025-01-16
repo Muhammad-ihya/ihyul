@@ -98,9 +98,6 @@ elif st.session_state.halaman == "kalkulator":
 
 
 
-
-
-
 # Data gula per 100 gram buah (untuk contoh, Anda bisa menambahkan lebih banyak buah)
 buah_data = {
     'Nama Buah': ['Apel', 'Arbei', 'Apricot', 'Anggur', 'Alpukat', 'Bit' , 'Belimbing','Bengkuang','Blueberi','Blewah','Ceri','Ciplukan','Carica','Cermai','Cranberry','Cempedak','Delima','Durian','Duku','Jeruk','Jambu Biji','Jambu Air','Kurma', 'Kedondong','Kelapa','Kecapi','Kelengkeng','Kiwi','Kesemek','Leci','Labu','Lemon','Mangga','Murbei','Matoa','Mengkudu', 'Manggis','Melon','Markisa','Naga','Nangka','Nanas','Pepaya','Pir','Persik','Plum','Pisang','Rambutan','Sirsak','Sukun','Salak','Stroberi','Semangka','Sawo','Tin','Tomat','Tebu','Timun','Zaitun'],
