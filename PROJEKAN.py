@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 
@@ -8,16 +7,15 @@ buah_data = {
     'Nama Buah': ['Apel', 'Arbei', 'Apricot', 'Anggur', 'Alpukat', 'Bit' , 'Belimbing','Bengkuang','Blueberi','Blewah','Ceri','Ciplukan','Carica','Cermai','Cranberry','Cempedak','Delima','Durian','Duku','Jeruk','Jambu Biji','Jambu Air','Kurma', 'Kedondong','Kelapa','Kecapi','Kelengkeng','Kiwi','Kesemek','Leci','Labu','Lemon','Mangga','Murbei','Matoa','Mengkudu', 'Manggis','Melon','Markisa','Naga','Nangka','Nanas','Pepaya','Pir','Persik','Plum','Pisang','Rambutan','Sirsak','Sukun','Salak','Stroberi','Semangka','Sawo','Tin','Tomat','Tebu','Timun','Zaitun'],
     'Gula (gram)': [10,8,9,16,0.7,8,5,1.8,14,8,8,3,3,3,4,13.5,16,19,20,9,9,4.5,66,6,3,14,65,9,20,21.5,3.5,2.5,13.7,8,21,8,15.6,8,11,13,19.3,10,7.8,10,10,10,12,15,13.5,24.5,21,7.4,6,18,16,2.6,16,5,0],  # Gula per 100 gram
 }
-
 #untuk input gambar background
 def add_gradient_overlay_background(image_url, overlay_opacity=1):
-    """
+    ("""
     Menambahkan background gambar dengan overlay warna hitam dan opacity yang dapat diatur.
     
     Parameters:
     - image_url: URL gambar untuk background.
     - overlay_opacity: Opacity overlay hitam (0.0 - 1.0).
-    """
+    """)
     st.markdown(
         f"""
         <style>
