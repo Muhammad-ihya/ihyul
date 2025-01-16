@@ -2,6 +2,19 @@
 import streamlit as st
 import pandas as pd
 
+# Membuat menu awal
+menu_awal = tk.Tk()
+menu_awal.title("Politeknik AKA Bogor")
+menu_awal.geometry("600x400")
+
+# Menambahkan gambar latar belakang
+bg_image = Image.open (""https://id.pngtree.com/freebackground/background-of-brown-abstract-watercolor_1272196.htm")  
+bg_image = bg_image.resize((600, 400), Image.ANTIALIAS)
+bg_photo = ImageTk.PhotoImage(bg_image)
+
+bg_label = tk.Label(menu_awal, https://www.google.com/url?sa=i&url=https%3A%2F%2Fid.wikipedia.org%2Fwiki%2FPoliteknik_AKA_Bogor&psig=AOvVaw1pm8o914GWe1hzV-yVLFmZ&ust=1737106625393000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJDKtsz4-YoDFQAAAAAdAAAAABAK=bg_photo)
+bg_label.place(relwidth=1, relheight=1)
+
 
 # Data gula per 100 gram buah (untuk contoh, Anda bisa menambahkan lebih banyak buah)
 buah_data = {
