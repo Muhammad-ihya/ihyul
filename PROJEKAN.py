@@ -2,6 +2,106 @@
 import streamlit as st
 import pandas as pd
 
+import streamlit as st
+import pandas as pd
+
+# Data gula per 100 gram buah
+buah_data = {
+    'Nama Buah': ['Apel', 'Arbei', 'Apricot', 'Anggur', 'Alpukat', 'Bit', 'Belimbing', 'Bengkuang', 'Blueberi', 'Blewah'],
+    'Gula (gram)': [10, 8, 9, 16, 0.7, 8, 5, 1.8, 14, 8]  # Contoh data gula per 100 gram
+}
+
+# Membuat DataFrame untuk buah
+df_buah = pd.DataFrame(buah_data)
+
+# Fungsi untuk menghitung kebutuhan gula berdasarkan berat badan dan usia
+def hitung_kebutuhan_gula(usia, berat_badan):
+    kebutuhan_kalori = berat_badan * 24  # Asumsi 24 kalori per kg berat badan
+    kebutuhan_gula = (kebutuhan_kalori * 0.1) / 4  # 10% kalori dari gula
+    return kebutuhan_gula
+
+# Fungsi untuk menghitung gula dalam jumlah buah yang dikonsumsi
+def hitung_gula_buah(fruit, jumlah_gram):
+    gula_per_100gram = df_buah[df_buah['Nama Buah'] == fruit]['Gula (gram)'].values[0]
+    gula_total = (gula_per_100gram / 100) * jumlah_gram
+    return gula_total
+
+# Fungsi untuk memberikan kesimpulan
+def kesimpulan(usia, berat_badan, total_gula, kebutuhan_gula):
+    if usia < 18:
+        usia_kategori = "usia muda"
+    elif 18 <= usia <= 60:
+        usia_kategori = "usia dewasa"
+    else:
+        usia_kategori = "usia tua"
+
+    if total_gula > kebutuhan_gula:
+        rekomendasi = "Anda telah mengonsumsi gula melebihi kebutuhan harian. Kurangi konsumsi buah dengan kadar gula tinggi."
+    elif total_gula < kebutuhan_gula * 0.5:
+        rekomendasi = "Anda mengonsumsi gula jauh di bawah kebutuhan harian. Anda bisa menambah konsumsi buah."
+    else:
+        rekomendasi = "Anda mengonsumsi gula dalam kisaran yang sehat. Pertahankan pola konsumsi ini."
+
+    return (
+        f"Dengan kategori {usia_kategori} dan berat badan {berat_badan} kg, kebutuhan gula harian Anda adalah {kebutuhan_gula:.2f} gram.\n"
+        f"Total gula dari buah yang dikonsumsi: {total_gula:.2f} gram.\n"
+        f"{rekomendasi}"
+    )
+
+# Halaman awal
+def halaman_awal():
+    st.title("Selamat Datang di Kalkulator Kebutuhan Gula")
+    st.image("https://akcdn.detik.net.id/community/media/visual/2022/05/16/buah-buahan-1_169.jpeg?w=700&q=90", use_column_width=True)
+    st.write("""
+        Kalkulator ini membantu Anda menghitung kebutuhan gula harian dari buah yang Anda konsumsi. 
+        Klik tombol di bawah untuk memulai.
+    """)
+    if st.button("Mulai"):
+        st.session_state.halaman = "kalkulator"
+
+# Halaman kalkulator
+def halaman_kalkulator():
+    st.title("Kalkulator Kebutuhan Gula Manusia dalam Buah")
+
+    # Input Usia dan Berat Badan
+    usia = st.number_input("Masukkan Usia (tahun)", min_value=1, max_value=100, value=30)
+    berat_badan = st.number_input("Masukkan Berat Badan (kg)", min_value=30, max_value=200, value=70)
+
+    # Hitung kebutuhan gula
+    kebutuhan_gula = hitung_kebutuhan_gula(usia, berat_badan)
+    st.write(f"Kebutuhan gula harian Anda adalah sekitar {kebutuhan_gula:.2f} gram.")
+
+    # Input Buah dan jumlahnya
+    buah_terpilih = st.multiselect("Pilih Buah", df_buah['Nama Buah'].tolist())
+    jumlah_buah = st.number_input("Masukkan Jumlah Buah yang Akan Dikirim (gram)", min_value=50, max_value=1000, value=100)
+
+    # Menampilkan informasi gula dari buah yang dipilih
+    if buah_terpilih:
+        total_gula = 0
+        for buah in buah_terpilih:
+            gula_buah = hitung_gula_buah(buah, jumlah_buah)
+            st.write(f"Untuk {jumlah_buah} gram {buah}, Anda akan mengonsumsi {gula_buah:.2f} gram gula.")
+            total_gula += gula_buah
+
+        st.write(f"Total gula yang dikonsumsi dari buah-buah terpilih: {total_gula:.2f} gram.")
+
+        # Tampilkan kesimpulan
+        kesimpulan_teks = kesimpulan(usia, berat_badan, total_gula, kebutuhan_gula)
+        st.subheader("Kesimpulan")
+        st.write(kesimpulan_teks)
+
+# Logika untuk navigasi halaman
+if "halaman" not in st.session_state:
+    st.session_state.halaman = "awal"
+
+if st.session_state.halaman == "awal":
+    halaman_awal()
+elif st.session_state.halaman == "kalkulator":
+    halaman_kalkulator()
+
+
+
+
 
 # Data gula per 100 gram buah (untuk contoh, Anda bisa menambahkan lebih banyak buah)
 buah_data = {
