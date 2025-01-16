@@ -1,17 +1,6 @@
 import streamlit as st
 import pandas as pd
 
-st.title("project")
-
-st.write("you have entered", st.session_state["my_input"])
-if "my_input" not in st.session_state:
-    st.session_state["my_input"] = ""
-    
-my_input = st.text_input("masukkan data teks di sini", st.session_state["my_input"])
-submit = st.button("submit")
-if submit:
-    st.session_state["my_input"] = my_input
-    st.write("anda telah masuk data teks: ", my_input)
 
 # Data gula per 100 gram buah (untuk contoh, Anda bisa menambahkan lebih banyak buah)
 buah_data = {
