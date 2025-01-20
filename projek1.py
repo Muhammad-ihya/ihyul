@@ -73,7 +73,7 @@ st.write(f"Kebutuhan gula harian Anda adalah sekitar {kebutuhan_gula:.2f} gram."
 
 # Input Buah dan jumlahnya
 buah_terpilih = st.multiselect("Pilih Buah", df_buah['Nama Buah'].tolist())
-jumlah_buah = st.number_input("Masukkan Jumlah Buah yang Akan Dikirim (gram)", min_value=50, max_value=1000, value=100)
+jumlah_buah = st.number_input("Masukkan Jumlah Buah (gram)", min_value=50, max_value=1000, value=100)
 
 # Menampilkan informasi gula dari buah yang dipilih
 if buah_terpilih:
