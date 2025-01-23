@@ -1,6 +1,99 @@
 import streamlit as st
 import pandas as pd
 
+# Inisialisasi session state untuk mengontrol tampilan
+if "page" not in st.session_state:
+    st.session_state.page = "home"
+
+# Halaman Home
+def home_page():
+    st.markdown(
+        """
+        <h1 style='text-align: center;'>
+            Kebutuhan Gula Manusia Dalam Buah
+        </h1>
+        <h3 style='text-align: center; color: #5D6D7E;'>
+            Solusi dalam kebutuhan gula buah yang harus dikonsumsi berdasarkan berat badan
+        </h3>
+        """,
+        unsafe_allow_html=True
+    )
+
+    image_url = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.liputan6.com%2Fcitizen6%2Fread%2F2848741%2Fwaspadai-7-buah-yang-memiliki-kandungan-gula-sangat-tinggi&psig=AOvVaw326pcQfBNYc1m54bZpWddr&ust=1737427123518000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLCh4ceig4sDFQAAAAAdAAAAABAE.jpg"
+    st.markdown(
+        f"""
+        <div style="text-align: center;">
+            <img src="{image_url}" style="width: 100%; max-width: 600px; border-radius: 15px; transition: transform 0.3s ease;" 
+                 onmouseover="this.style.transform='scale(1.05)'" 
+                 onmouseout="this.style.transform='scale(1)'">
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+    st.markdown("---")
+
+    st.markdown(
+        """
+        <h2 style='text-align: center;'>
+             Kelompok 4
+        </h2>
+        <p style='text-align: Left;'>
+            Anggota: <br>
+            - Arie Prasetyo Nugroho     (2350075) <br>
+            - Hana Mahdiyyah            (2350096) <br>
+            - Muhammad Ihya Ulumudin    (2350110) <br>
+            - Shafa Noer Hafizhah       (2350134) <br>
+            - Vinny Valvita BR Ketaren  (2350138) <br>
+        </p>
+        """,
+        unsafe_allow_html=True
+    )
+
+    st.markdown("---")
+
+    col1, col2 = st.columns(2)
+    with col1:
+        if st.button("Penjelasan tentang berat badan dan gula buah"):
+            st.session_state.page = "penjelasan"
+    with col2:
+        if st.button("Kalkulator kebutuhan gula dalam buah "):
+            st.session_state.page = "kalkulator"
+            
+# Halaman Penjelasan Berat Badan dan Gula Buah
+def penjelasan_bmi():
+    st.markdown(
+        """
+        <h1 style='text-align: center;'>
+            Penjelasan tentang Berat Badan dan Gula Buah
+        </h1>
+        """,
+        unsafe_allow_html=True
+    )
+
+    # Garis Pemisah
+    st.markdown("---")
+
+    st.markdown(
+        """
+        ### Pengertian Gula
+        Gula adalah salah satu sumber energi utama yang dibutuhkan tubuh untuk menjalankan berbagai fungsi vital, termasuk aktivitas otak, otot, dan organ lainnya. 
+        Dalam bentuk glukosa, gula berperan penting dalam menjaga stamina dan metabolisme tubuh. WHO merekomendasikan konsumsi gula tambahan tidak lebih dari 10 persen dari total kebutuhan energi harian, atau sekitar 25 sampai 50 gram gula per hari untuk orang dewasa. 
+        Namun, seringkali kita tidak menyadari bahwa asupan gula harian tidak hanya berasal dari gula pasir atau pemanis tambahan, tetapi juga dari sumber alami seperti buah-buahan. 
+        Buah mengandung gula alami dalam bentuk fruktosa, yang biasanya disertai serat, vitamin, dan mineral penting. 
+        Gula alami dari buah ini lebih sehat dibandingkan gula tambahan, karena serat dalam buah memperlambat penyerapan gula, sehingga tidak menyebabkan lonjakan kadar gula darah secara drastis. 
+        Meskipun demikian, konsumsi buah secara berlebihan juga dapat menyumbang kelebihan asupan gula total harian. Ditambah dengan gula tersembunyi dari makanan olahan, banyak orang secara tidak sadar melampaui batas yang dianjurkan. 
+        Oleh karena itu, penting untuk memahami perbedaan antara gula alami dan gula tambahan, serta mengelola asupan gula total agar tetap seimbang untuk menjaga kesehatan tubuh. Aplikasi web ini akan membantu anda.
+
+        """
+    )
+
+    # Garis pemisah
+    st.markdown("---")
+
+    if st.button("Kembali ke Home "):
+        go_home() 
+
 
 # Data gula per 100 gram buah (untuk contoh, Anda bisa menambahkan lebih banyak buah)
 buah_data = {
