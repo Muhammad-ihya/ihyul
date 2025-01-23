@@ -50,14 +50,11 @@ def add_gradient_overlay_background(image_url, overlay_opacity=1):
 
 # Fungsi untuk menambahkan CSS kustom agar judul tetap berwarna putih
 def add_custom_css():
-    """
-    Menambahkan CSS kustom untuk mengatur warna judul agar tetap terlihat jelas.
-    """
     st.markdown(
         """
         <style>
         .stApp h1 {
-            color: white;  /* Ganti dengan warna lain jika diperlukan */
+            color: white; 
         }
         </style>
         """,
