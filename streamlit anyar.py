@@ -48,18 +48,21 @@ def add_gradient_overlay_background(image_url, overlay_opacity=1):
         unsafe_allow_html=True
     )
 
-# Fungsi untuk menambahkan CSS kustom agar judul tetap berwarna putih
 def add_custom_css():
+    """
+    Menambahkan CSS kustom untuk mengatur warna judul agar tetap terlihat jelas.
+    """
     st.markdown(
         """
         <style>
         .stApp h1 {
-            color: white; 
+            color: white !important; /* Memastikan warna putih diterapkan */
         }
         </style>
         """,
         unsafe_allow_html=True
     )
+
 
 # URL gambar Anda (ganti dengan URL gambar yang Anda gunakan)
 image_url = "https://akcdn.detik.net.id/community/media/visual/2022/05/16/buah-buahan-1_169.jpeg?w=700&q=90"
